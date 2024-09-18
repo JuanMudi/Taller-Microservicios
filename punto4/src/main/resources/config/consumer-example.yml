@@ -1,0 +1,45 @@
+spring:
+  application:
+    # Never use '_' in application name, both in application.yaml and pom.xml
+    # Use '-' instead
+    # Otherwise gateway may not work correctly
+    name: consumer-example
+
+  # Message queue
+  cloud:
+    stream:
+      kafka:
+        binder:
+          # 9092 is the default port of Kafka
+          brokers: localhost:9092
+      bindings:
+        # https://docs.spring.io/spring-cloud-stream/reference/spring-cloud-stream/functional-binding-names.html
+        # Format: <method name>-<in or out>-<index>
+        # receiveMessage: name of the method that receives the message
+        # in: because is a consumer
+        # 0: Index of the binding. This allows the same method to receive from multiple queues
+        receiveMessage-in-0:
+          destination: ms-example-queue
+          # Group is necessary to ensure that this
+          # consumer receives all messages sent while
+          # it was offline
+          group: my-consumer-group
+
+
+server:
+  # To avoid colliding with other apps in port 8080
+  port: 8083
+
+# App metadata
+info:
+  app:
+    name: Consumer Example
+    description: A Consumer Example
+    version: 1.0.0
+  company:
+    name: MyCompany
+    contact:
+      email: support@mycompany.com
+      phone: +1234567890
+  build:
+    time: ${BUILD_TIME:2024-08-21T12:30:00Z}

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: candresborja-munozd-nmontanez
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: Names Microservice
+    description: Microservice to get team members' names
+    version: 0.1

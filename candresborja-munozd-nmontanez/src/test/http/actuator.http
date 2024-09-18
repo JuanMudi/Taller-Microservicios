@@ -1,0 +1,2 @@
+### GET actuator info
+GET http://localhost:8081/actuator/info

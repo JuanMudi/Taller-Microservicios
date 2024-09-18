@@ -1,0 +1,8 @@
+### GET nmontanez
+GET http://localhost:8081/nombre/nmontanez
+
+### GET munozd
+GET http://localhost:8081/nombre/munozd
+
+### GET candresborja
+GET http://localhost:8081/nombre/candresborja

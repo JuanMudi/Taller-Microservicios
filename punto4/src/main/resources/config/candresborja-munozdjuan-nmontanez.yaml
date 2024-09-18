@@ -1,0 +1,17 @@
+spring:
+  application:
+    # Never use '_' in application name, both in application.yaml and pom.xml
+    # Use '-' instead
+    # Otherwise gateway may not work correctly
+    name: candresborja-munozdjuan-nmontanez
+
+server:
+  # To avoid colliding with other apps in port 8080
+  port: 8081
+
+# App metadata
+info:
+  app:
+    name: Name Microservice
+    description: A simple microservice example
+    version: 1.0.0

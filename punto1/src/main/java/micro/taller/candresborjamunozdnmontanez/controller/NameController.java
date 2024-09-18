@@ -13,7 +13,7 @@ public class NameController {
         return ResponseEntity.ok("Nicolás Montañez Velasco");
     }
 
-    @GetMapping("/munozd")
+    @GetMapping("/munozdjuan")
     public ResponseEntity<String> munozdjuan() {
         return ResponseEntity.ok("Juan Esteban Muñoz Díaz");
     }

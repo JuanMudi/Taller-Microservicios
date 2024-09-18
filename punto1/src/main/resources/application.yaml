@@ -1,35 +1,7 @@
 spring:
   application:
-    name: candresborja-munozd-nmontanez
-
-server:
-  port: 8081
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
-  info:
-    env:
-      enabled: true
-
-info:
-  app:
-    name: Names Microservice
-    description: Microservice to get team members' names
-    version: 0.1
-
-eureka:
-  client:
-    # To report to Eureka when this service is up
-    registerWithEureka: true
-    # Eureka server URL
-    service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:9988/eureka/}
-  instance:
-    # To avoid using DNS
-    prefer-ip-address: true
+    # This should match the name used in config files
+    name: candresborja-munozdjuan-nmontanez
+  config:
+    # Config server url
+    import: configserver:http://localhost:8888
